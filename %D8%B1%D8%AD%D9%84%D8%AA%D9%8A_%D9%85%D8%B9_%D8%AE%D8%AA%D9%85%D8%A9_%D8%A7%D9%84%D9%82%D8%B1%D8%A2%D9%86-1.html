@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>رحلتي مع ختمة القرآن</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff6fb,#f4efff 58%,#fffaf0);font-family:Tahoma,Arial,sans-serif;color:#55425b;padding:16px 12px 92px}.app{max-width:520px;margin:auto}
+.top{text-align:center;padding:8px}.moon{font-size:40px}.top h1{margin:4px;color:#765276;font-size:25px}.top p{margin:6px;color:#a184a5;font-size:13px}
+.card{background:#fffdfd;border:1px solid #f0ddea;border-radius:24px;padding:17px;margin:12px 0;box-shadow:0 8px 24px #9a6f9a14}
+.info{display:flex;justify-content:space-between;align-items:center;gap:8px;background:linear-gradient(135deg,#fff0f7,#f1edff)}.label{font-size:11px;color:#a286a6}.value{font-size:16px;font-weight:bold;color:#714d75;margin-top:4px}
+.msg{text-align:center;line-height:1.9;color:#765779;font-size:14px;background:linear-gradient(135deg,#fff,#fff5fa)}
+.progress{display:flex;align-items:center;gap:16px}.circle{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;position:relative;flex:none;background:conic-gradient(#b67fac var(--p),#eee5ee 0)}.circle:after{content:"";position:absolute;width:77px;height:77px;border-radius:50%;background:white}.circle b{position:relative;z-index:1;color:#704d75}
+.stats{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{background:#fff7fc;border-radius:16px;padding:10px;text-align:center}.num{font-size:21px;font-weight:bold;color:#79527d}.small{font-size:11px;color:#a188a4}
+.title{font-weight:bold;color:#79527d;margin-bottom:8px}.surah{display:flex;align-items:center;gap:9px;padding:10px 2px;border-bottom:1px solid #f3ebf2;cursor:pointer}.surah:last-child{border:0}.check{width:25px;height:25px;border:2px solid #d4b4d0;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:bold;flex:none}.done .check{background:#a978a5;border-color:#a978a5}.done .name{text-decoration:line-through;color:#ad9ead}.numS{width:24px;text-align:center;color:#b394b3;font-size:12px}.name{flex:1;font-weight:bold}
+.note{text-align:center;color:#aa92aa;font-size:11px;margin-top:10px}
+.new{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:min(92%,490px);border:0;border-radius:18px;padding:15px;background:linear-gradient(135deg,#a970a2,#80609b);color:white;font-weight:bold;font-size:16px;box-shadow:0 9px 22px #76508040;cursor:pointer}
+</style></head>
+<body><div class="app">
+<header class="top"><div class="moon">🌙</div><h1>رحلتي مع ختمة القرآن</h1><p>خطوة كل يوم… حتى نصل إلى تمام الختمة 🤍</p></header>
+<section class="card info"><div><div class="label">بدأتِ الختمة في</div><div class="value" id="date">—</div></div><div style="font-size:26px">🌷</div><div><div class="label">أنتِ الآن</div><div class="value" id="day">—</div></div></section>
+<section class="card msg" id="msg">بسم الله… أجمل الرحلات تبدأ بخطوة 🤍</section>
+<section class="card"><div class="progress"><div class="circle" id="circle"><b id="percent">0%</b></div><div class="stats">
+<div class="stat"><div class="num" id="done">0</div><div class="small">سورة مكتملة</div></div>
+<div class="stat"><div class="num" id="left">114</div><div class="small">سورة متبقية</div></div>
+<div class="stat"><div class="num" id="juz">30</div><div class="small">جزء متبقٍ تقريبًا</div></div>
+<div class="stat"><div class="num" id="days">1</div><div class="small">يوم من الختمة</div></div>
+</div></div></section>
+<section class="card"><div class="title">📖 سور القرآن الكريم</div><div id="list"></div><div class="note">اضغطي على السورة لتسجيلها كمكتملة • اختياراتك محفوظة تلقائيًا على هذا الجهاز 🤍</div></section>
+</div><button class="new" onclick="newKhatmah()">🌸 بدء ختمة جديدة</button>
+<script>
+const names=["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
+let state;try{state=JSON.parse(localStorage.getItem("quranKhatmah"));}catch(e){state=null}if(!state||!Array.isArray(state.done)||!state.start)state={start:new Date().toISOString(),done:[]};
+function save(){try{localStorage.setItem("quranKhatmah",JSON.stringify(state))}catch(e){}}
+function dayCount(){let a=new Date(state.start),b=new Date();a.setHours(0,0,0,0);b.setHours(0,0,0,0);return Math.max(1,Math.floor((b-a)/86400000)+1)}
+function render(){let d=dayCount(),n=state.done.length,p=n/114;document.getElementById("date").textContent=new Date(state.start).toLocaleDateString("ar-EG",{day:"numeric",month:"long",year:"numeric"});document.getElementById("day").textContent="اليوم "+d;document.getElementById("days").textContent=d;document.getElementById("done").textContent=n;document.getElementById("left").textContent=114-n;document.getElementById("juz").textContent=Math.ceil((114-n)/3.8);document.getElementById("percent").textContent=Math.round(p*100)+"%";document.getElementById("circle").style.setProperty("--p",(p*360)+"deg");
+let m=n===0?"بسم الله… ابدئي أول خطوة، وأجمل الرحلات تبدأ بخطوة 🤍":n<10?"بداية جميلة! استمري، القليل مع الاستمرار يصنع إنجازًا كبيرًا 🌷":n<40?"ما شاء الله! أنتِ تتقدمين، لا تتركي وردك اليومي 📖✨":n<80?"اقتربتِ أكثر مما تتخيلين… كمّلي، بقي القليل 🌙":n<114?"ما شاء الله! النهاية قريبة جدًا، شدّي همتك وأكملي الختمة 🤍":"ما شاء الله تبارك الله! أتممتِ الختمة 🎉🤍 تقبل الله منكِ.";document.getElementById("msg").textContent=m;
+let list=document.getElementById("list");list.innerHTML="";names.forEach((name,i)=>{let r=document.createElement("div");r.className="surah "+(state.done.includes(i)?"done":"");r.innerHTML='<div class="check">'+(state.done.includes(i)?"✓":"")+'</div><div class="numS">'+(i+1)+'</div><div class="name">'+name+'</div>';r.onclick=()=>{state.done=state.done.includes(i)?state.done.filter(x=>x!==i):[...state.done,i];save();render()};list.appendChild(r)})}
+function newKhatmah(){if(confirm("هل تريدين بدء ختمة جديدة؟ سيتم تصفير الختمة الحالية والبدء من اليوم.")){state={start:new Date().toISOString(),done:[]};save();render();window.scrollTo({top:0,behavior:"smooth"})}}render();
+</script></body></html>
